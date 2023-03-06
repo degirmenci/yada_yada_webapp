@@ -77,10 +77,6 @@ function MainBody() {
             body: JSON.stringify(apiBody)
         });
         const data = await response.json();
-
-        //console.log('Response from OpenAI: ');
-        //console.log(data);
-
         return data;
       }      
     
