@@ -16,8 +16,8 @@ export default async function handler(req, res) {
 
     const receivedBody = req.body;
 
-    console.log("received body")
-    console.log(receivedBody)
+    //console.log("received body")
+    //console.log(receivedBody)
 
     const apiBody = {
       model: 'gpt-3.5-turbo',
@@ -26,8 +26,9 @@ export default async function handler(req, res) {
           {role: 'user', content: receivedBody['promptText']}],
     };
 
-    console.log("sending this")
-    console.log(apiBody)
+    //console.log("sending this")
+    console.log(JSON.stringify(apiBody))
+    console.log("going")
 
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
