@@ -38,8 +38,16 @@ export default async function handler(req, res) {
       body: JSON.stringify(apiBody)
     });
 
-    console.log("Got this")
-
+    if (response.ok) {
+      const data = await response.json();
+      res.status(response.status).json(data);
+    } else {
+      const error = new Error(`HTTP Error ${response.status} - ${response.statusText}`);
+      console.log("Response not ok")
+      console.log(error)
+      // data.choices[0].message.content
+      res.status(200).json({'choices': [{'index': 0, 'message': {'content': 'Error'}}]})
+    }
     const data = await response.json();
     console.log(data);
     res.status(response.status).json(data);
