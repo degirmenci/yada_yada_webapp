@@ -27,8 +27,7 @@ export default async function handler(req, res) {
     };
 
     //console.log("sending this")
-    console.log(JSON.stringify(apiBody))
-    console.log("going")
+    console.log("sending")
 
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
@@ -38,6 +37,8 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify(apiBody)
     });
+
+    console.log(response)
 
     if (response.ok) {
       const data = await response.json();
