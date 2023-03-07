@@ -38,11 +38,20 @@ export default async function handler(req, res) {
       body: JSON.stringify(apiBody)
     });
 
-    console.log(response)
+    //console.log(response)
+
+    console.log('here')
 
     if (response.ok) {
-      const data = await response.json();
-      res.status(response.status).json(data);
+      try {
+        const data = await response.json();
+        res.status(response.status).json(data);
+      }
+      catch (error) {
+        console.log("Error parsing response")
+        console.log(error)
+        res.status(200).json({'choices': [{'index': 0, 'message': {'content': 'Error'}}]})
+      }
     } else {
       const error = new Error(`HTTP Error ${response.status} - ${response.statusText}`);
       console.log("Response not ok")
@@ -50,9 +59,8 @@ export default async function handler(req, res) {
       // data.choices[0].message.content
       res.status(200).json({'choices': [{'index': 0, 'message': {'content': 'Error'}}]})
     }
-    const data = await response.json();
-    console.log(data);
-    res.status(response.status).json(data);
+
+    console.log("finished")
 
     // function sleep(ms) {
     //     return new Promise(resolve => setTimeout(resolve, ms));

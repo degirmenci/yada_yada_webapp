@@ -21,7 +21,7 @@ function MainBody() {
         if (inputText !== "") {
             setUserDefinedPrompt('Title: ' + inputText);
         }
-    })
+    }, [generatedScript, inputText])
 
     const handleEnterKey = (e) => {
         if (e.key === 'Enter' && inputText) {
