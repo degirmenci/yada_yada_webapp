@@ -65,17 +65,18 @@ function MainBody() {
     
 
     return (
-        <div className="flex flex-col items-center justify-center">
+        <div className="">
             <div className="flex flex-col items-center justify-center p-4">
                 <h1 className="text-4xl font-bold text-gray-100 dark:text-gray-200">The Yada Yada Generator</h1>
                 <p className="p-2">You provide a title, yada yada, we generate an episode of your favorite TV show about nothing.</p>
             </div>
 
-            <div className="p-6 flex flex-col items-center md:flex-row md:justify-center md:items-center">
+            {/*<div className="p-6 flex md:flexitems-center md:justify-center md:items-center"> */}
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-4">
                 <input value={inputText} onChange={(e) => setInputText(e.target.value)}
                 onKeyDown={handleEnterKey}
                 type="text" placeholder="The Parking Lot"
-                className="rounded-full text-center	w-70 md:w-50 px-48 py-2 border-gray-300"
+                className="rounded-full text-center	w-11/12 md:w-7/12 max-w-lg px-48 py-2 border-gray-300"
                 />
                 <button
                     className="bg-[#fbd71f] hover:bg-[#E1C11B] text-[#e50b26] font-bold py-2 px-8 mx-6 rounded-full h-10 w-50"
@@ -87,7 +88,7 @@ function MainBody() {
                 </button>
             </div>
 
-            <div>
+            <div className="mt-4">
                 {isGenerated && <ScriptWidget sessionId={sessionId} script={generatedScript} userPrompt={userDefinedPrompt} />}
             </div>
 
