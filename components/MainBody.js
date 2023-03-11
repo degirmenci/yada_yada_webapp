@@ -65,9 +65,9 @@ function MainBody() {
     
 
     return (
-        <div className="">
-            <div className="flex flex-col items-center justify-center p-4">
-                <h1 className="text-4xl font-bold text-gray-100 dark:text-gray-200">The Yada Yada Generator</h1>
+        <div>
+            <div className="flex flex-col items-center justify-center p-4 text-gray-100 dark:text-gray-200">
+                <h1 className="text-4xl font-bold">The Yada Yada Generator</h1>
                 <p className="p-2">You provide a title, yada yada, we generate an episode of your favorite TV show about nothing.</p>
             </div>
 
@@ -76,7 +76,6 @@ function MainBody() {
                 <input value={inputText} onChange={(e) => setInputText(e.target.value)}
                 onKeyDown={handleEnterKey}
                 type="text" placeholder="The Parking Lot"
-                //className="rounded-full text-center w-11/12 md:w-7/12 max-w-lg px-48 py-2"
                 className="rounded-full text-center w-10/12 md:w-8/12 px-3 py-2"
                 />
                 <button

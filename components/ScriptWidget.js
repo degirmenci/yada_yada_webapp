@@ -51,7 +51,7 @@ const ScriptWidget = ({ sessionId, script, userPrompt }) => {
               {lines.map((line, index) => {
                   // Match the character name using a regular expression
                   return (
-                  <p key={index} className="text-gray">
+                  <p key={index} className="text-gray-100 dark:text-gray-100">
                       {line}
                   </p>
                   );
