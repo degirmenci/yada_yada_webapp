@@ -76,7 +76,7 @@ function MainBody() {
                 <input value={inputText} onChange={(e) => setInputText(e.target.value)}
                 onKeyDown={handleEnterKey}
                 type="text" placeholder="The Parking Lot"
-                className="rounded-full text-center	w-11/12 md:w-7/12 max-w-lg px-48 py-2 border-gray-300"
+                className="rounded-full text-center	w-11/12 md:w-7/12 max-w-lg px-48 py-2 border-gray-200 bg-gray-200 text-gray-900"
                 />
                 <button
                     className="bg-[#fbd71f] hover:bg-[#E1C11B] text-[#e50b26] font-bold py-2 px-8 mx-6 rounded-full h-10 w-50"
